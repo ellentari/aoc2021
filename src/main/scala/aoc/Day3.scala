@@ -41,7 +41,7 @@ object Day3:
   }
 
   private def selectChar(input: List[String], atIndex: Int, criteria: CharCriteria) =
-    criteria(input.map(_.charAt(atIndex)).groupBy(identity).view.mapValues(_.length).toMap)
+    criteria(count(input.map(_.charAt(atIndex))))
 
   private def toInt(binary: String) = if (binary.isEmpty) 0 else Integer.parseInt(binary, 2)
 
