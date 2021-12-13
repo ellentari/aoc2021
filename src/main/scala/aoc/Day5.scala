@@ -1,12 +1,10 @@
 package aoc
 
+import aoc.util.Coordinate
+
 import scala.math.Ordering.Implicits.*
 
 object Day5:
-
-  final case class Coordinate(x: Int, y: Int)
-  object Coordinate:
-    implicit val orderingCoordinate: Ordering[Coordinate] = Ordering.by(l => (l.x, l.y))
 
   final case class Line private(left: Coordinate, right: Coordinate):
     def maxX: Int = right.x
