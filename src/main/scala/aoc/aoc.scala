@@ -3,6 +3,9 @@ package aoc
 def count[A](iterable: Iterable[A]): Map[A, Int] =
   iterable.groupBy(identity).view.mapValues(_.size).toMap
 
+def countLong[A](iterable: Iterable[A]): Map[A, Long] =
+  iterable.groupBy(identity).view.mapValues(_.size.toLong).toMap
+
 def medianOption(input: Iterable[Int]): Option[Int] =
   if (input.isEmpty) None
   else
